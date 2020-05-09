@@ -1,6 +1,6 @@
 package com.freezk.client.grpc;
 
-import com.freezk.server.grpc.HelloWorld;
+import com.freezk.service.grpc.HelloWorld;
 import io.grpc.stub.StreamObserver;
 
 public  interface Greeter {

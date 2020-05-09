@@ -1,8 +1,14 @@
 package com.freezk.server.dubbo;
 
-public class GreetingsServiceImpl implements GreetingService{
+import com.freezk.service.dubbo.GreetingService;
+
+public class GreetingsServiceImpl implements GreetingService {
     @Override
     public String sayHi(String name) {
-        return "hi, " + name;
+        StringBuilder test = new StringBuilder("hello dubbo!");
+        for (int i = 0; i < 10; i++) {
+            test.append(test);
+        }
+        return "hi, " + name + test ;
     }
 }

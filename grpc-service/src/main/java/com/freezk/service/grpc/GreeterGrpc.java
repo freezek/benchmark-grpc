@@ -1,4 +1,9 @@
-package com.freezk.server.grpc;
+package com.freezk.service.grpc;
+
+import com.google.protobuf.AbstractMessageLite;
+import io.grpc.MethodDescriptor;
+import io.grpc.stub.ClientCalls;
+import io.grpc.stub.ServerCalls;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
@@ -40,7 +45,7 @@ public final class GreeterGrpc {
           GreeterGrpc.getSayHelloMethod = getSayHelloMethod =
               io.grpc.MethodDescriptor.<HelloWorld.HelloRequest, HelloWorld.HelloReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SayHello"))
+              .setFullMethodName(MethodDescriptor.generateFullMethodName(SERVICE_NAME, "SayHello"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   HelloWorld.HelloRequest.getDefaultInstance()))
@@ -112,14 +117,14 @@ public final class GreeterGrpc {
      */
     public void sayHello(HelloWorld.HelloRequest request,
                          io.grpc.stub.StreamObserver<HelloWorld.HelloReply> responseObserver) {
-      asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
+      ServerCalls.asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSayHelloMethod(),
-            asyncUnaryCall(
+            ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 HelloWorld.HelloRequest,
                 HelloWorld.HelloReply>(
@@ -154,7 +159,7 @@ public final class GreeterGrpc {
      */
     public void sayHello(HelloWorld.HelloRequest request,
                          io.grpc.stub.StreamObserver<HelloWorld.HelloReply> responseObserver) {
-      asyncUnaryCall(
+      ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -182,7 +187,7 @@ public final class GreeterGrpc {
      * </pre>
      */
     public HelloWorld.HelloReply sayHello(HelloWorld.HelloRequest request) {
-      return blockingUnaryCall(
+      return ClientCalls.blockingUnaryCall(
           getChannel(), getSayHelloMethod(), getCallOptions(), request);
     }
   }
@@ -211,7 +216,7 @@ public final class GreeterGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<HelloWorld.HelloReply> sayHello(
         HelloWorld.HelloRequest request) {
-      return futureUnaryCall(
+      return ClientCalls.futureUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request);
     }
   }
@@ -675,7 +680,7 @@ public final class GreeterGrpc {
         public HelloRequest build() {
           HelloRequest result = buildPartial();
           if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
+            throw Builder.newUninitializedMessageException(result);
           }
           return result;
         }
@@ -834,7 +839,7 @@ public final class GreeterGrpc {
           if (value == null) {
       throw new NullPointerException();
     }
-    checkByteStringIsUtf8(value);
+    AbstractMessageLite.checkByteStringIsUtf8(value);
 
           name_ = value;
           onChanged();
@@ -1249,7 +1254,7 @@ public final class GreeterGrpc {
         public HelloReply build() {
           HelloReply result = buildPartial();
           if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
+            throw Builder.newUninitializedMessageException(result);
           }
           return result;
         }
@@ -1408,7 +1413,7 @@ public final class GreeterGrpc {
           if (value == null) {
       throw new NullPointerException();
     }
-    checkByteStringIsUtf8(value);
+    AbstractMessageLite.checkByteStringIsUtf8(value);
 
           message_ = value;
           onChanged();

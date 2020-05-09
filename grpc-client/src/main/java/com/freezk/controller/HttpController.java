@@ -1,9 +1,10 @@
 package com.freezk.controller;
 
-import com.freezk.client.dubbo.DubboClient;
 import com.freezk.client.grpc.GrpcTestBlockingClient;
 import com.freezk.common.HttpCommons;
 import com.freezk.common.OkHttpCommon;
+import com.freezk.service.dubbo.GreetingService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -17,6 +18,10 @@ public class HttpController {
     private HttpCommons httpCommons;
     @Autowired
     private OkHttpCommon okHttpCommon;
+
+    @Reference
+    private GreetingService greetingService;
+
     @RequestMapping("/say")
     public void sayHello(){
        doMain();
@@ -34,12 +39,15 @@ public class HttpController {
 
     @RequestMapping("/dubbo")
     public void hiDubbo(){
-        DubboClient.sayHi();
+        long l = System.currentTimeMillis();
+        String jack = greetingService.sayHi("jack");
+        System.out.println(jack.concat(String.valueOf(System.currentTimeMillis()-l)));
+
     }
 
     public String doMain(){
         long l = System.currentTimeMillis();
-            String hello = httpCommons.exchange("http://localhost/hello?hello=".concat("china"), HttpMethod.GET, new ParameterizedTypeReference<String>() {
+            String hello = httpCommons.exchange("http://localhost:8082/hello?hello=".concat("china"), HttpMethod.GET, new ParameterizedTypeReference<String>() {
             }, "");
             System.out.println(hello);
         System.out.println("spend time :".concat(String.valueOf(System.currentTimeMillis()-l)));

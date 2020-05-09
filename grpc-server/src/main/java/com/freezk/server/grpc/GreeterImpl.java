@@ -1,5 +1,6 @@
 package com.freezk.server.grpc;
 
+import com.freezk.service.grpc.GreeterGrpc;
 import io.grpc.stub.StreamObserver;
 
 import java.util.concurrent.atomic.AtomicInteger;

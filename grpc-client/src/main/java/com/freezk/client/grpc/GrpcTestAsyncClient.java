@@ -1,6 +1,6 @@
 package com.freezk.client.grpc;
 
-import com.freezk.server.grpc.GreeterGrpc;
+import com.freezk.service.grpc.GreeterGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
