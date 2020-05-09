@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.freezk</groupId>
-    <artifactId>provider</artifactId>
+    <artifactId>grpc-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>provider</name>
+    <name>grpc-server</name>
     <description>Demo project for grpc</description>
 
     <properties>

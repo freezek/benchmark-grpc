@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.freezk</groupId>
-    <artifactId>consumer</artifactId>
+    <artifactId>grpc-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>consumer</name>
+    <name>grpc-client</name>
     <description>Demo project for grpc</description>
 
     <properties>
@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.freezk</groupId>
-            <artifactId>provider</artifactId>
+            <artifactId>grpc-server</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
