@@ -1,6 +1,6 @@
-package com.freezk.client;
+package com.freezk.client.grpc;
 
-import com.freezk.server.GreeterGrpc;
+import com.freezk.server.grpc.GreeterGrpc;
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;

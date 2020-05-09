@@ -1,4 +1,4 @@
-package com.freezk.server;
+package com.freezk.server.grpc;
 
 import io.grpc.stub.StreamObserver;
 

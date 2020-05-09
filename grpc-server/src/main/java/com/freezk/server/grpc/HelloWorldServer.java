@@ -1,4 +1,4 @@
-package com.freezk.server;
+package com.freezk.server.grpc;
 
 /*
  * Copyright 2015 The gRPC Authors

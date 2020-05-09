@@ -1,6 +1,7 @@
 package com.freezk.controller;
 
-import com.freezk.client.GrpcTestBlockingClient;
+import com.freezk.client.dubbo.DubboClient;
+import com.freezk.client.grpc.GrpcTestBlockingClient;
 import com.freezk.common.HttpCommons;
 import com.freezk.common.OkHttpCommon;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,11 @@ public class HttpController {
     @RequestMapping("/rpc")
     public void sayRpc(){
         doRpc();
+    }
+
+    @RequestMapping("/dubbo")
+    public void hiDubbo(){
+        DubboClient.sayHi();
     }
 
     public String doMain(){

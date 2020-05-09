@@ -1,4 +1,4 @@
-package com.freezk.server;
+package com.freezk.server.grpc;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
