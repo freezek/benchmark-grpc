@@ -12,7 +12,7 @@
     <artifactId>grpc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>grpc</name>
+    <name>benchmark-grpc</name>
     <description>Demo for grpc</description>
 
     <properties>
