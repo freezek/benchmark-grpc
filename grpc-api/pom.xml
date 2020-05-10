@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.freezk</groupId>
-    <artifactId>grpc-service</artifactId>
+    <artifactId>grpc-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>grpc-service</name>
+    <name>grpc-api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
